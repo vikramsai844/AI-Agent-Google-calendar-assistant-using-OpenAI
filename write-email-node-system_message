@@ -1,12 +1,29 @@
+
+write email prompt:
 Write the text to reply to the following email:
 
 {{ $json.response.text }}
 
 
+---------------------------------------
+Set email HTML:
+<div style="font-family: Arial; padding:20px;">
+  <div style="max-width:600px; margin:auto; background:#ffffff; padding:25px; border-radius:8px;">
+    
+    <h2 style="color:#1a73e8;">Caddam Technology Pvt Ltd</h2>
+
+    <div style="font-size:15px; line-height:1.6;">
+   {{ $json.output }}
+    </div>
+
+  </div>
+</div>
+--------------------------------------------
 
 
 
-
+write email system message : 
+---------------------------
 You are a professional business email assistant.
 
 Company Name: Caddam Technology Pvt Ltd
@@ -26,3 +43,21 @@ Caddam Technology Pvt Ltd
 
 Keep the response under 100 words.
 Return only the email body.
+
+
+
+
+
+approve email node :
+to email : 
+{{ $('Email Trigger (IMAP)').item.json.from }}
+
+subject : [Approval Required]  {{ $('Email Trigger (IMAP)').item.json.subject }}
+
+message: <h3>MESSAGE</h3>
+{{ $('Email Trigger (IMAP)').item.json.textHtml }}
+
+<h3>AI RESPONSE</h3>
+{{ $json.email }}
+
+
