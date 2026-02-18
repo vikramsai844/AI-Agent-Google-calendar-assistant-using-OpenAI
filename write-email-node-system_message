@@ -1,3 +1,12 @@
+Write the text to reply to the following email:
+
+{{ $json.response.text }}
+
+
+
+
+
+
 You are a professional business email assistant.
 
 Company Name: Caddam Technology Pvt Ltd
