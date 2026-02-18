@@ -61,3 +61,14 @@ message: <h3>MESSAGE</h3>
 {{ $json.email }}
 
 
+
+sent email node (send): from:
+{{ $('Email Trigger (IMAP)').item.json.to }}
+
+to email :
+{{ $('Email Trigger (IMAP)').item.json.from }}
+
+subject:
+Re: {{ $('Email Trigger (IMAP)').item.json.subject }}
+
+{{ $('Set Email text').item.json.email }}
